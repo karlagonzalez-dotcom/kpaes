@@ -1,0 +1,12 @@
+{
+  "build": {
+    "builder": "node",
+    "commands": {
+      "install": "npm install",
+      "build": "npm run build"
+    }
+  },
+  "run": {
+    "command": "npm start"
+  }
+}
