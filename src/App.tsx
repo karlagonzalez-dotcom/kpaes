@@ -5,7 +5,7 @@ import { guides, GuideTopic } from './data/guides';
 // ==================== AI CHATBOT ====================
 function AIChat() {
   const [messages, setMessages] = useState<{role: string, content: string}[]>([
-    { role: 'assistant', content: '¡Hola! 👋 Soy tu ayudante IA para la PAES. Puedo ayudarte con dudas de Matemáticas, Lenguaje, Ciencias e Historia. ¿En qué te puedo ayudar?' }
+    { role: 'assistant', content: '¡Hola! 👋 Soy tu ayudante IA para prepararte para la PAES. No importa si estás en la escuela, si eres adulto o si volviste a estudiar después de un tiempo. ¡Estoy aquí para ayudarte!\n\n¿En qué te puedo ayudar?' }
   ]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -26,7 +26,7 @@ function AIChat() {
     }
     
     if (msg.includes('porcentaje') || msg.includes('porciento') || msg.includes('%')) {
-      return '📊 Para calcular porcentajes:\n\n• 25% de 200 = 200 × 0.25 = 50\n• Para aumentar 10%: multiplica por 1.10\n• Para descontar 20%: multiplica por 0.80\n\nTruco: convierte el % a decimal dividiendo entre 100.\n\n¿Necesitas practicar con algún ejercicio?';
+      return '📊 Para calcular porcentajes:\n\n• 25% de 200 = 200 × 0.25 = 50\n• Para aumentar 10%: multiplica por 1.10\n• Para descontar 20%: multiplica por 0.80\n\nTruco: convierte el % a decimal dividiendo entre 100.\n\nEjemplo práctico: Si ganas $500.000 y te descuentan 7% de AFP:\n$500.000 × 0.07 = $35.000 de descuento.\n\n¿Necesitas practicar con algún ejercicio?';
     }
     
     if (msg.includes('figura') || msg.includes('literaria') || msg.includes('metáfora')) {
@@ -41,24 +41,28 @@ function AIChat() {
       return '🇨🇱 Independencia de Chile - Etapas clave:\n\n1. PATRIA VIEJA (1810-1814): Primeros gobiernos. Termina con Desastre de Rancagua.\n\n2. RECONQUISTA (1814-1817): España retoma el control.\n\n3. PATRIA NUEVA (1817-1823): Cruce de los Andes. Batalla de Chacabuco (1817) y Maipú (1818).\n\n📅 12 febrero 1818: Declaración de Independencia.\n\nPersonajes clave: O\'Higgins, San Martín, Carrera.';
     }
     
-    if (msg.includes('fraccion') || msg.includes('dividir fraccion')) {
-      return '📐 Operaciones con fracciones:\n\n• SUMA/RESTA: Mismo denominador → suma/resta numeradores\n• Multiplicación: Multiplica numerador × numerador, denominador × denominador\n• División: Multiplica por el inverso (cruz)\n\nEjemplo: 2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6\n\n¿Quieres más ejemplos?';
+    if (msg.includes('beca') || msg.includes('gratuidad') || msg.includes('financiamiento')) {
+      return '💰 Becas y Financiamiento para estudiar:\n\n📌 GRATUIDAD: Cubre el arancel completo en universidades adscritas. Requisitos:\n• Estar en el 50% de menores ingresos del país\n• Matricularte en una universidad adscrita\n• No tener un título profesional previo\n\n📌 BECA FAES (ex-Junaeb): Para estudiantes de educación superior\n📌 BECA INDÍGENA: Para estudiantes de pueblos originarios\n📌 CRÉDITO FONDU: Crédito con aval del Estado\n\n💡 Tip: Postula a todos los beneficios que puedas. ¡No pierdas oportunidades!';
     }
     
-    if (msg.includes('fotosíntesis') || msg.includes('fotosintesis') || msg.includes('planta')) {
-      return '🌱 Fotosíntesis:\n\nEs el proceso por el cual las plantas producen su alimento.\n\nFórmula: CO₂ + H₂O + Luz → Glucosa + O₂\n\nOcurre en los CLOROPLASTOS (tienen clorofila, pigmento verde).\n\nNecesita: luz solar, agua, dióxido de carbono\nProduce: glucosa (alimento) y oxígeno\n\n¡Por eso las plantas son importantes para el aire que respiramos!';
+    if (msg.includes('universidad') || msg.includes('carrera') || msg.includes('estudiar')) {
+      return '🎓 Sobre Universidades y Carreras:\n\n📋 Tipos de instituciones:\n• Universidades (tradicionales y privadas)\n• Centros de Formación Técnica (CFT)\n• Institutos Profesionales (IP)\n\n🔍 Para elegir carrera:\n1. Identifica tus intereses y habilidades\n2. Investiga el campo laboral\n3. Revisa el plan de estudios\n4. Conversa con profesionales del área\n5. Considera la duración y costo\n\n📊 La PAES es requisito para la mayoría de las carreras universitarias. ¡Prepárate bien!';
+    }
+    
+    if (msg.includes('adulto') || msg.includes('trabajo') || msg.includes('mayor')) {
+      return '👨‍💼 Información para Adultos:\n\n📌 PAES para adultos: No hay límite de edad para rendir la PAES. Puedes darla las veces que necesites.\n\n📌 Modalidades de estudio para adultos:\n• Programas vespertinos\n• Programas de continuidad de estudios\n• Educación para jóvenes y adultos (EPJA)\n• Programas especiales de universidades\n\n📌 Si dejaste la escuela:\n• Puedes terminar enseñanza media a través de EXAMEN LIBRE o EPJA\n• Luego rendir la PAES y postular a la universidad\n\n💪 ¡Nunca es tarde para estudiar! Muchas personas logran su título siendo adultos.';
     }
     
     if (msg.includes('paes') || msg.includes('prueba') || msg.includes('consejo')) {
-      return '🎯 Consejos para la PAES:\n\n1. Duerme bien la noche anterior (mínimo 8 horas)\n2. Lee bien cada pregunta ANTES de responder\n3. Elimina las opciones obviamente incorrectas\n4. Si no sabes, marca y sigue. No te quedes pegado.\n5. Controla el tiempo: no gastes mucho en una pregunta\n6. Practica con simulacros cronometrados\n7. Repasa tus errores de pruebas anteriores\n\n¡Tú puedes! 💪';
+      return '🎯 Consejos para la PAES:\n\n📅 ANTES DE LA PRUEBA:\n1. Duerme bien la noche anterior (mínimo 8 horas)\n2. Lleva tu cédula de identidad\n3. Llega con anticipación al local\n4. Desayuna bien\n\n📝 DURANTE LA PRUEBA:\n1. Lee bien cada pregunta ANTES de responder\n2. Elimina las opciones obviamente incorrectas\n3. Si no sabes, marca y sigue. No te quedes pegado\n4. Controla el tiempo\n\n💡 Tip: Practica con simulacros cronometrados. ¡Esa es la clave!';
     }
     
     if (msg.includes('hola') || msg.includes('buenas') || msg.includes('hey')) {
-      return '¡Hola! 😊 ¿En qué puedo ayudarte hoy? Puedo explicarte temas de:\n\n📐 Matemáticas\n📝 Lenguaje\n🔬 Ciencias\n🇨🇱 Historia\n\nO puedo darte consejos para la PAES. ¡Pregúntame lo que necesites!';
+      return '¡Hola! 😊 ¿En qué puedo ayudarte hoy? Puedo explicarte temas de:\n\n📐 Matemáticas\n📝 Lenguaje\n🔬 Ciencias\n🇨🇱 Historia\n\nO puedo ayudarte con:\n💰 Becas y financiamiento\n🎓 Universidades y carreras\n👨‍💼 Información para adultos\n\n¡Pregúntame lo que necesites!';
     }
     
     if (msg.includes('gracias') || msg.includes('thanks')) {
-      return '¡De nada! 😊 Estoy aquí para ayudarte. Si tienes más dudas, no dudes en preguntar. ¡Mucho éxito en tu preparación para la PAES! 🌟';
+      return '¡De nada! 😊 Estoy aquí para ayudarte. Si tienes más dudas, no dudes en preguntar. ¡Mucho éxito en tu preparación! 🌟';
     }
 
     if (msg.includes('area') || msg.includes('perímetro') || msg.includes('perimetro')) {
@@ -68,8 +72,12 @@ function AIChat() {
     if (msg.includes('verbo') || msg.includes('gramatica') || msg.includes('gramática')) {
       return '📝 Gramática básica:\n\n• SUJETO: Quien realiza la acción\n• PREDICADO: Lo que se dice del sujeto\n• VERBO: Acción o estado\n\nTipos de verbos:\n- Transitivos: necesitan objeto directo\n- Intransitivos: no necesitan objeto\n- Copulativos: ser, estar, parecer\n\nConectores: unen ideas (pero, además, sin embargo, por lo tanto)';
     }
+
+    if (msg.includes('examen libre') || msg.includes('epja') || msg.includes('terminar media')) {
+      return '📚 Terminar la Enseñanza Media:\n\n📌 EXAMEN LIBRE:\n• Para mayores de 18 años\n• Se rinde una vez al año\n• Exámenes de todas las asignaturas de 1° y 2° medio\n• Se inscribe en el Ministerio de Educación\n\n📌 EPJA (Educación para Jóvenes y Adultos):\n• Para mayores de 15 años\n• Clases presenciales, generalmente vespertinas\n• Duración: 2 años (equivalente a 1° y 2° medio)\n• Gratuitas en establecimientos municipales\n\n💡 Ambas opciones te dan licencia de enseñanza media para rendir la PAES.';
+    }
     
-    return '🤔 Interesante pregunta. Puedo ayudarte con temas de:\n\n📐 Matemáticas (ecuaciones, porcentajes, geometría)\n📝 Lenguaje (figuras literarias, comprensión lectora, gramática)\n🔬 Ciencias (célula, fotosíntesis, cuerpo humano)\n🇨🇱 Historia (independencia de Chile, civilizaciones)\n\nIntenta preguntar algo más específico como:\n• "¿Cómo resuelvo ecuaciones?"\n• "¿Qué son las figuras literarias?"\n• "Dame consejos para la PAES"';
+    return '🤔 Puedo ayudarte con muchos temas. Prueba preguntándome sobre:\n\n📐 Matemáticas (ecuaciones, porcentajes, geometría)\n📝 Lenguaje (figuras literarias, comprensión lectora)\n🔬 Ciencias (célula, cuerpo humano, medio ambiente)\n🇨🇱 Historia (independencia, siglo XX, derechos humanos)\n💰 Becas y financiamiento\n🎓 Universidades y carreras\n👨‍💼 Información para adultos\n📚 Cómo terminar la enseñanza media\n\n¡Pregúntame lo que necesites!';
   };
 
   const handleSend = () => {
@@ -90,9 +98,9 @@ function AIChat() {
     <div className="flex flex-col h-[600px] bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 text-white">
         <h3 className="text-xl font-bold flex items-center gap-2">
-          🤖 Ayudante IA - PAES Prep
+          🤖 Ayudante IA
         </h3>
-        <p className="text-indigo-100 text-sm">Pregúntame lo que necesites saber</p>
+        <p className="text-indigo-100 text-sm">Pregúntame sobre materias, becas, universidades o cómo prepararte</p>
       </div>
       
       <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
@@ -128,7 +136,7 @@ function AIChat() {
           </button>
         </div>
         <div className="flex gap-2 mt-2 flex-wrap">
-          {['Consejos PAES', 'Ecuaciones', 'Figuras literarias', 'La célula'].map(suggestion => (
+          {['Becas', 'Adultos', 'Consejos PAES', 'Ecuaciones', 'Universidades'].map(suggestion => (
             <button
               key={suggestion}
               onClick={() => { setInput(suggestion); }}
@@ -186,7 +194,7 @@ function QuizSection() {
     setScore(0);
     setQuizFinished(false);
     setQuizStarted(true);
-    setTimeLeft(allQuestions[subject].length * 60); // 1 min per question
+    setTimeLeft(allQuestions[subject].length * 60);
     setAnswers(new Array(allQuestions[subject].length).fill(null));
   };
 
@@ -230,7 +238,7 @@ function QuizSection() {
     return (
       <div>
         <h2 className="text-2xl font-bold text-gray-800 mb-2">📝 Simulador de Pruebas</h2>
-        <p className="text-gray-600 mb-6">Elige una asignatura para comenzar tu simulacro con tiempo.</p>
+        <p className="text-gray-600 mb-6">Practica con simulacros cronometrados. Ideal para estudiantes de media, adultos y cualquier persona que quiera rendir la PAES.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {subjects.map(subject => (
             <button
@@ -250,6 +258,12 @@ function QuizSection() {
               </div>
             </button>
           ))}
+        </div>
+        <div className="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4">
+          <p className="text-amber-800 text-sm flex items-start gap-2">
+            <span className="text-lg">💡</span>
+            <span><strong>Tip:</strong> En la PAES real tienes aproximadamente 1 minuto por pregunta. Practica con el cronómetro para mejorar tu velocidad y precisión.</span>
+          </p>
         </div>
       </div>
     );
@@ -416,7 +430,7 @@ function GuidesSection() {
   return (
     <div>
       <h2 className="text-2xl font-bold text-gray-800 mb-2">📚 Guías de Estudio</h2>
-      <p className="text-gray-600 mb-6">Material de estudio organizado por asignatura para tu preparación PAES.</p>
+      <p className="text-gray-600 mb-6">Material de estudio organizado por asignatura. Perfecto para estudiantes de media, adultos y cualquier persona preparándose para la PAES.</p>
       
       <div className="flex gap-2 mb-6 flex-wrap">
         {subjects.map(subject => (
@@ -460,9 +474,159 @@ function GuidesSection() {
   );
 }
 
+// ==================== INFO SECTION ====================
+function InfoSection() {
+  return (
+    <div className="space-y-6">
+      <h2 className="text-2xl font-bold text-gray-800 mb-2">ℹ️ Información PAES</h2>
+      <p className="text-gray-600 mb-6">Todo lo que necesitas saber sobre la prueba y el proceso de admisión.</p>
+
+      {/* ¿Qué es la PAES? */}
+      <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+          📋 ¿Qué es la PAES?
+        </h3>
+        <p className="text-gray-700 mb-4">
+          La <strong>Prueba de Acceso a la Educación Superior (PAES)</strong> es el examen que deben rendir los estudiantes que quieren ingresar a la universidad en Chile. Reemplazó a la antigua PSU en 2022.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-blue-50 rounded-xl p-4">
+            <h4 className="font-bold text-blue-800 mb-2">Pruebas Obligatorias:</h4>
+            <ul className="space-y-1 text-sm text-blue-700">
+              <li>• Competencia Lectora</li>
+              <li>• Competencia Matemática 1 (M1)</li>
+            </ul>
+          </div>
+          <div className="bg-purple-50 rounded-xl p-4">
+            <h4 className="font-bold text-purple-800 mb-2">Pruebas Electivas:</h4>
+            <ul className="space-y-1 text-sm text-purple-700">
+              <li>• Competencia Matemática 2 (M2)</li>
+              <li>• Ciencias</li>
+              <li>• Historia y Ciencias Sociales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* ¿Quién puede rendir? */}
+      <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+          👥 ¿Quién puede rendir la PAES?
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-green-50 rounded-xl p-4">
+            <span className="text-3xl mb-2 block">🎒</span>
+            <h4 className="font-bold text-green-800 mb-1">Estudiantes de media</h4>
+            <p className="text-sm text-green-700">Alumnos de 4° medio que están terminando el colegio.</p>
+          </div>
+          <div className="bg-orange-50 rounded-xl p-4">
+            <span className="text-3xl mb-2 block">👨‍💼</span>
+            <h4 className="font-bold text-orange-800 mb-1">Adultos</h4>
+            <p className="text-sm text-orange-700">Personas de cualquier edad que quieran estudiar una carrera. ¡No hay límite de edad!</p>
+          </div>
+          <div className="bg-pink-50 rounded-xl p-4">
+            <span className="text-3xl mb-2 block">🔄</span>
+            <h4 className="font-bold text-pink-800 mb-1">Quienes rinden de nuevo</h4>
+            <p className="text-sm text-pink-700">Puedes dar la PAES las veces que necesites para mejorar tu puntaje.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Becas */}
+      <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+          💰 Becas y Financiamiento
+        </h3>
+        <div className="space-y-3">
+          <div className="flex items-start gap-3 p-3 bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl">
+            <span className="text-2xl">🎓</span>
+            <div>
+              <h4 className="font-bold text-gray-800">Gratuidad</h4>
+              <p className="text-sm text-gray-600">Cubre el arancel completo. Requisito: estar en el 50% de menores ingresos del país y matricularse en universidad adscrita.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3 p-3 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl">
+            <span className="text-2xl">📚</span>
+            <div>
+              <h4 className="font-bold text-gray-800">Beca de Arancel</h4>
+              <p className="text-sm text-gray-600">Cubre total o parcialmente el arancel. Hay varias: Beca Nuevo Milenio, Beca Juan Gómez Millas, entre otras.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3 p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl">
+            <span className="text-2xl">💳</span>
+            <div>
+              <h4 className="font-bold text-gray-800">Crédito con Aval del Estado (CAE)</h4>
+              <p className="text-sm text-gray-600">Financiamiento bancario con garantía del Estado. Se paga una vez egresado y con ingresos superiores a cierto monto.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3 p-3 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl">
+            <span className="text-2xl">🌟</span>
+            <div>
+              <h4 className="font-bold text-gray-800">Beca Excelencia Técnica</h4>
+              <p className="text-sm text-gray-600">Para estudiantes que ingresan a CFT o IP con buen rendimiento académico.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Modalidades de estudio */}
+      <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+        <h3 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
+          🏫 Modalidades de Estudio
+        </h3>
+        <p className="text-gray-600 mb-4">Si eres adulto o tienes trabajo, existen opciones flexibles:</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="border border-gray-200 rounded-xl p-4">
+            <h4 className="font-bold text-gray-800 mb-1">📅 Programas Diurnos</h4>
+            <p className="text-sm text-gray-600">Horario regular de lunes a viernes. Ideal para estudiantes que no trabajan.</p>
+          </div>
+          <div className="border border-gray-200 rounded-xl p-4">
+            <h4 className="font-bold text-gray-800 mb-1">🌙 Programas Vespertinos</h4>
+            <p className="text-sm text-gray-600">Clases en la tarde/noche. Perfecto para personas que trabajan durante el día.</p>
+          </div>
+          <div className="border border-gray-200 rounded-xl p-4">
+            <h4 className="font-bold text-gray-800 mb-1">💻 Programas Online</h4>
+            <p className="text-sm text-gray-600">Estudio a distancia con clases virtuales. Máxima flexibilidad de horario.</p>
+          </div>
+          <div className="border border-gray-200 rounded-xl p-4">
+            <h4 className="font-bold text-gray-800 mb-1">📝 Programas de Continuidad</h4>
+            <p className="text-sm text-gray-600">Diseñados para adultos que dejaron sus estudios y quieren retomarlos.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Fechas importantes */}
+      <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 text-white">
+        <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+          📅 Fechas Clave (Referencia General)
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+            <p className="font-bold">Inscripción PAES</p>
+            <p className="text-sm text-indigo-100">Generalmente entre abril y mayo</p>
+          </div>
+          <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+            <p className="font-bold">Rendición PAES</p>
+            <p className="text-sm text-indigo-100">Fines de noviembre / principios de diciembre</p>
+          </div>
+          <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+            <p className="font-bold">Publicación de Resultados</p>
+            <p className="text-sm text-indigo-100">Mediados de diciembre</p>
+          </div>
+          <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+            <p className="font-bold">Postulación a Universidades</p>
+            <p className="text-sm text-indigo-100">Enero del año siguiente</p>
+          </div>
+        </div>
+        <p className="text-xs text-indigo-200 mt-4">* Las fechas exactas varían cada año. Revisa demre.cl para información actualizada.</p>
+      </div>
+    </div>
+  );
+}
+
 // ==================== MAIN APP ====================
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'quiz' | 'guides' | 'ai'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'quiz' | 'guides' | 'ai' | 'info'>('home');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
@@ -481,20 +645,20 @@ export default function App() {
                 { id: 'home' as const, label: 'Inicio', icon: '🏠' },
                 { id: 'quiz' as const, label: 'Pruebas', icon: '📝' },
                 { id: 'guides' as const, label: 'Guías', icon: '📚' },
-                { id: 'ai' as const, label: 'IA Ayudante', icon: '🤖' },
+                { id: 'info' as const, label: 'Info PAES', icon: 'ℹ️' },
+                { id: 'ai' as const, label: 'IA', icon: '🤖' },
               ].map(item => (
                 <button
                   key={item.id}
                   onClick={() => setCurrentPage(item.id)}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-1 ${
+                  className={`px-2 md:px-3 py-2 rounded-lg text-xs md:text-sm font-medium transition-all flex items-center gap-1 ${
                     currentPage === item.id
                       ? 'bg-indigo-100 text-indigo-700'
                       : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
-                  <span className="hidden sm:inline">{item.icon}</span>
-                  <span className="hidden sm:inline">{item.label}</span>
-                  <span className="sm:hidden text-lg">{item.icon}</span>
+                  <span>{item.icon}</span>
+                  <span className="hidden md:inline">{item.label}</span>
                 </button>
               ))}
             </div>
@@ -514,9 +678,12 @@ export default function App() {
                 <h1 className="text-3xl md:text-4xl font-bold mb-4">
                   ¡Prepárate para la PAES! 🚀
                 </h1>
-                <p className="text-lg md:text-xl text-indigo-100 mb-6 max-w-2xl">
-                  Tu plataforma de estudio para pasar de 1° a 2° medio con todo. 
-                  Pruebas cronometradas, guías de estudio y un ayudante IA para resolver tus dudas.
+                <p className="text-lg md:text-xl text-indigo-100 mb-4 max-w-2xl">
+                  Tu plataforma de estudio para rendir la PAES con confianza. 
+                  No importa si eres estudiante de media, adulto o estás retomando tus estudios.
+                </p>
+                <p className="text-indigo-200 mb-6 text-sm md:text-base">
+                  🎒 Estudiantes de media • 👨‍💼 Adultos • 🔄 Personas que rinden de nuevo
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <button
@@ -524,6 +691,12 @@ export default function App() {
                     className="px-6 py-3 bg-white text-indigo-600 rounded-xl font-bold hover:bg-indigo-50 transition-colors shadow-lg"
                   >
                     📝 Hacer una Prueba
+                  </button>
+                  <button
+                    onClick={() => setCurrentPage('info')}
+                    className="px-6 py-3 bg-white/20 text-white rounded-xl font-bold hover:bg-white/30 transition-colors backdrop-blur-sm border border-white/30"
+                  >
+                    ℹ️ Info PAES y Becas
                   </button>
                   <button
                     onClick={() => setCurrentPage('ai')}
@@ -536,31 +709,61 @@ export default function App() {
             </div>
 
             {/* Features */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               <button
                 onClick={() => setCurrentPage('quiz')}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
+                className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
               >
-                <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-4">📝</div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Pruebas con Tiempo</h3>
-                <p className="text-gray-500 text-sm">Simulacros cronometrados de Matemáticas, Lenguaje, Ciencias e Historia con retroalimentación instantánea.</p>
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-3">📝</div>
+                <h3 className="text-base font-bold text-gray-800 mb-1">Pruebas con Tiempo</h3>
+                <p className="text-gray-500 text-xs">Simulacros cronometrados con retroalimentación instantánea.</p>
               </button>
               <button
                 onClick={() => setCurrentPage('guides')}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
+                className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
               >
-                <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-2xl mb-4">📚</div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Guías de Estudio</h3>
-                <p className="text-gray-500 text-sm">Material organizado por asignatura con explicaciones claras, ejemplos y tips para la PAES.</p>
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl mb-3">📚</div>
+                <h3 className="text-base font-bold text-gray-800 mb-1">Guías de Estudio</h3>
+                <p className="text-gray-500 text-xs">Material por asignatura con explicaciones y tips.</p>
+              </button>
+              <button
+                onClick={() => setCurrentPage('info')}
+                className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
+              >
+                <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-2xl mb-3">💰</div>
+                <h3 className="text-base font-bold text-gray-800 mb-1">Becas y Info</h3>
+                <p className="text-gray-500 text-xs">Todo sobre becas, universidades y el proceso.</p>
               </button>
               <button
                 onClick={() => setCurrentPage('ai')}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
+                className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
               >
-                <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-2xl mb-4">🤖</div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">Ayudante IA</h3>
-                <p className="text-gray-500 text-sm">Un asistente inteligente que resuelve tus dudas y te explica los temas que necesites reforzar.</p>
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl mb-3">🤖</div>
+                <h3 className="text-base font-bold text-gray-800 mb-1">Ayudante IA</h3>
+                <p className="text-gray-500 text-xs">Resuelve tus dudas al instante.</p>
               </button>
+            </div>
+
+            {/* Para quién es */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 mb-8">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🎯 ¿Para quién es esta plataforma?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl mb-3">🎒</div>
+                  <h4 className="font-bold text-gray-800 mb-2">Estudiantes de Media</h4>
+                  <p className="text-sm text-gray-600">Si estás en 3° o 4° medio y quieres prepararte con anticipación para la PAES.</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl mb-3">👨‍💼</div>
+                  <h4 className="font-bold text-gray-800 mb-2">Adultos</h4>
+                  <p className="text-sm text-gray-600">Si tienes 18 años o más, trabajas y quieres estudiar una carrera universitaria.</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl mb-3">🔄</div>
+                  <h4 className="font-bold text-gray-800 mb-2">Quienes rinden de nuevo</h4>
+                  <p className="text-sm text-gray-600">Si ya diste la PAES y quieres mejorar tu puntaje para postular a otra carrera.</p>
+                </div>
+              </div>
             </div>
 
             {/* Stats & Motivation */}
@@ -585,8 +788,8 @@ export default function App() {
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">⏰</div>
                     <div>
-                      <p className="font-medium text-gray-800">Empieza temprano</p>
-                      <p className="text-sm text-gray-500">Cada día de estudio cuenta. ¡No lo dejes para último!</p>
+                      <p className="font-medium text-gray-800">Nunca es tarde</p>
+                      <p className="text-sm text-gray-500">No importa tu edad. ¡Cada día de estudio cuenta!</p>
                     </div>
                   </div>
                 </div>
@@ -596,10 +799,11 @@ export default function App() {
                     Recuerda que cada pregunta que practicas te acerca más a tu meta. 
                     Usa las guías para estudiar, las pruebas para medir tu progreso y la IA para resolver dudas.
                   </p>
-                  <div className="mt-4 flex gap-2">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-medium">4 asignaturas</span>
-                    <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">40+ preguntas</span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">6 guías</span>
+                    <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">60+ preguntas</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">12 guías</span>
+                    <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-medium">Sin límite de edad</span>
                   </div>
                 </div>
               </div>
@@ -610,16 +814,17 @@ export default function App() {
         {currentPage === 'quiz' && <QuizSection />}
         {currentPage === 'guides' && <GuidesSection />}
         {currentPage === 'ai' && <AIChat />}
+        {currentPage === 'info' && <InfoSection />}
       </main>
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-100 mt-12 py-6">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-gray-500 text-sm">
-            🎓 PAES Prep - Tu ayudante para la Prueba de Acceso a la Educación Superior
+            🎓 PAES Prep - Preparación para la Prueba de Acceso a la Educación Superior
           </p>
           <p className="text-gray-400 text-xs mt-1">
-            Hecho con ❤️ para estudiantes de Chile
+            Para estudiantes de media, adultos y personas de 16 años en adelante • Hecho con ❤️ en Chile
           </p>
         </div>
       </footer>

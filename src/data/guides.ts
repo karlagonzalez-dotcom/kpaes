@@ -47,8 +47,29 @@ export const guides: GuideTopic[] = [
     tips: [
       "Convierte porcentajes a decimales para facilitar cálculos",
       "La regla de tres simple resuelve la mayoría de problemas",
-      "Practica con situaciones de la vida real (descuentos, propinas)",
+      "Practica con situaciones de la vida real (descuentos, propinas, presupuestos)",
       "Recuerda: aumentar un 10% es multiplicar por 1.10"
+    ]
+  },
+  {
+    id: "mat-funciones",
+    title: "Funciones y Gráficos",
+    subject: "Matemáticas",
+    icon: "📈",
+    summary: "Comprende el concepto de función y cómo graficarlas",
+    content: [
+      "Una función es una relación donde cada valor de x tiene un único valor de y.",
+      "Se escribe como f(x) = expresión. Ejemplo: f(x) = 2x + 3",
+      "La función lineal tiene la forma f(x) = mx + b, donde m es la pendiente y b el intercepto.",
+      "La pendiente (m) indica cuánto cambia y por cada unidad que cambia x.",
+      "Para graficar: crea una tabla de valores (x, y) y ubica los puntos en el plano cartesiano.",
+      "Ejemplo: f(x) = 2x + 1 → si x=0, y=1; si x=1, y=3; si x=2, y=5"
+    ],
+    tips: [
+      "Recuerda: pendiente positiva = línea sube, pendiente negativa = línea baja",
+      "El intercepto con el eje Y es donde x = 0",
+      "Practica identificando pendiente e intercepto en ecuaciones dadas",
+      "Las funciones son útiles para modelar situaciones reales (costos, ingresos)"
     ]
   },
   {
@@ -70,7 +91,7 @@ export const guides: GuideTopic[] = [
       "Para diferenciar metáfora de símil: busca 'como', 'cual', 'parece'",
       "La hipérbole siempre exagera, nunca es literal",
       "En la PAES preguntan mucho por identificación de figuras",
-      "Lee poemas y practica identificando las figuras"
+      "Lee poemas y noticias para practicar identificando figuras"
     ]
   },
   {
@@ -91,7 +112,28 @@ export const guides: GuideTopic[] = [
       "Subraya las ideas principales mientras lees",
       "Resume cada párrafo en una oración",
       "Identifica el tipo de texto (argumentativo, narrativo, expositivo)",
-      "Practica leyendo artículos de diario y revistas"
+      "Lee artículos de diario, revistas y ensayos para practicar"
+    ]
+  },
+  {
+    id: "len-tipos-texto",
+    title: "Tipos de Texto",
+    subject: "Lenguaje",
+    icon: "📄",
+    summary: "Diferencia entre textos narrativos, argumentativos y expositivos",
+    content: [
+      "TEXTO NARRATIVO: Cuenta una historia o sucesos. Tiene personajes, tiempo y espacio. Ej: cuentos, novelas.",
+      "TEXTO ARGUMENTATIVO: Defiende una tesis con argumentos. Busca convencer. Ej: editoriales, ensayos.",
+      "TEXTO EXPOSITIVO: Explica o informa sobre un tema de forma objetiva. Ej: libros de texto, noticias.",
+      "TEXTO DESCRIPTIVO: Detalla características de personas, objetos o lugares.",
+      "TEXTO INSTRUCTIVO: Da instrucciones paso a paso. Ej: recetas, manuales.",
+      "En la PAES es clave identificar el propósito del autor: ¿quiere contar, convencer, informar o describir?"
+    ],
+    tips: [
+      "Si el texto opina y da razones → es argumentativo",
+      "Si cuenta hechos o historia → es narrativo",
+      "Si explica un tema sin opinar → es expositivo",
+      "Fíjate en los verbos: narrativo usa pasado, expositivo usa presente"
     ]
   },
   {
@@ -117,6 +159,48 @@ export const guides: GuideTopic[] = [
     ]
   },
   {
+    id: "cie-cuerpo",
+    title: "Sistemas del Cuerpo Humano",
+    subject: "Ciencias",
+    icon: "🫀",
+    summary: "Conoce los principales sistemas que mantienen tu cuerpo funcionando",
+    content: [
+      "SISTEMA CIRCULATORIO: Corazón bombea sangre por venas y arterias. Transporta oxígeno y nutrientes.",
+      "SISTEMA RESPIRATORIO: Pulmones intercambian gases. Inhalamos O₂, exhalamos CO₂.",
+      "SISTEMA DIGESTIVO: Descompone alimentos para absorber nutrientes. Boca → esófago → estómago → intestinos.",
+      "SISTEMA NERVIOSO: Cerebro, médula espinal y nervios. Controla todas las funciones del cuerpo.",
+      "SISTEMA ENDOCRINO: Glándulas que producen hormonas (tiroides, páncreas, suprarrenales).",
+      "Todos los sistemas trabajan en conjunto para mantener la homeostasis (equilibrio interno)."
+    ],
+    tips: [
+      "Relaciona cada sistema con su función principal",
+      "El corazón es parte del sistema circulatorio, no respiratorio",
+      "Las hormonas son mensajeros químicos del cuerpo",
+      "Practica con diagramas del cuerpo humano"
+    ]
+  },
+  {
+    id: "cie-ecosistemas",
+    title: "Ecosistemas y Medio Ambiente",
+    subject: "Ciencias",
+    icon: "🌍",
+    summary: "Entiende cómo funcionan los ecosistemas y la importancia de cuidarlos",
+    content: [
+      "Un ecosistema es un sistema formado por seres vivos (biocenosis) y su ambiente físico (biotopo).",
+      "Cadena alimentaria: productores → consumidores primarios → consumidores secundarios → descomponedores.",
+      "Los productores (plantas) hacen fotosíntesis. Son la base de toda cadena alimentaria.",
+      "Factores abióticos: luz, temperatura, agua, suelo. Factores bióticos: todos los seres vivos.",
+      "Contaminación: alteración negativa del ambiente por sustancias dañinas (plásticos, químicos, gases).",
+      "Cambio climático: aumento de temperatura global por efecto invernadero (CO₂, metano)."
+    ],
+    tips: [
+      "Siempre las cadenas alimentarias parten con un productor (planta)",
+      "Los descomponedores cierran el ciclo (bacterias, hongos)",
+      "Recuerda: el calentamiento global es causado por gases de efecto invernadero",
+      "Conecta con temas de actualidad: reciclaje, energías renovables"
+    ]
+  },
+  {
     id: "his-independencia",
     title: "Independencia de Chile",
     subject: "Historia",
@@ -136,6 +220,49 @@ export const guides: GuideTopic[] = [
       "Memoriza las fechas más importantes: 1810, 1814, 1817, 1818",
       "Conoce los personajes principales: O'Higgins, San Martín, Carrera",
       "Relaciona causas internas y externas de la independencia"
+    ]
+  },
+  {
+    id: "his-chile-sigloxx",
+    title: "Chile en el Siglo XX",
+    subject: "Historia",
+    icon: "📜",
+    summary: "Los principales hitos de Chile durante el siglo XX",
+    content: [
+      "1920-1930: Crisis económica mundial afecta a Chile. Caída del salitre.",
+      "1938-1952: Gobiernos radicales. Industrialización y expansión de la educación.",
+      "1960-1970: Reformas sociales. Gobierno de Frei Montalva (Reforma Agraria) y Allende (vía chilena al socialismo).",
+      "1973: Golpe de Estado. Inicio de la dictadura militar de Pinochet.",
+      "1980: Nueva Constitución. Modelo económico neoliberal.",
+      "1988: Plebiscito. El 'No' gana, iniciando la transición a la democracia.",
+      "1990: Retorno a la democracia con Patricio Aylwin. Comisión de Verdad y Reconciliación."
+    ],
+    tips: [
+      "Entiende las causas y consecuencias de cada período",
+      "Relaciona los hechos con el contexto internacional",
+      "La Constitución de 1980 es un tema frecuente en la PAES",
+      "Comprende los conceptos de democracia, dictadura y transición"
+    ]
+  },
+  {
+    id: "his-derechos",
+    title: "Derechos Humanos y Ciudadanía",
+    subject: "Historia",
+    icon: "⚖️",
+    summary: "Conoce tus derechos y deberes como ciudadano",
+    content: [
+      "Los Derechos Humanos son universales, inalienables e indivisibles. Aplican a todas las personas.",
+      "Declaración Universal de DDHH (1948): 30 derechos fundamentales aprobados por la ONU.",
+      "Derechos civiles: vida, libertad, igualdad ante la ley, propiedad.",
+      "Derechos políticos: votar, ser elegido, participar en asuntos públicos.",
+      "Derechos sociales: educación, salud, trabajo, vivienda digna.",
+      "Los deberes ciudadanos incluyen: respetar la ley, pagar impuestos, votar, cuidar el bien común."
+    ],
+    tips: [
+      "Conoce la diferencia entre derechos y deberes",
+      "Los DDHH no se pueden quitar ni renunciar",
+      "La democracia se basa en el respeto a los derechos de todos",
+      "Relaciona con situaciones actuales de tu comunidad"
     ]
   }
 ];
