@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { allQuestions, Question } from './data/questions';
+import { allQuestions } from './data/questions';
 import { guides, GuideTopic } from './data/guides';
+import { careers, careerAreas, Career } from './data/careers';
 
 // ==================== AI CHATBOT ====================
 function AIChat() {
@@ -20,6 +21,18 @@ function AIChat() {
 
   const getAIResponse = (userMessage: string): string => {
     const msg = userMessage.toLowerCase();
+    
+    if (msg.includes('terapeuta ocupacional') || msg.includes('ocupacional')) {
+      return '🧩 TERAPISTA OCUPACIONAL\n\n📋 ¿Qué hace?\nAyuda a personas con discapacidades físicas, mentales o del desarrollo a recuperar habilidades para realizar actividades diarias (vestirse, trabajar, cocinar).\n\n⏱ Duración: 5 años\n💰 Sueldo: $600.000 - $1.200.000\n\n🎯 Habilidades necesarias:\n• Empatía y paciencia\n• Creatividad\n• Observación\n• Trabajo en equipo\n\n🏥 Dónde trabajar:\n• Hospitales y clínicas\n• Centros de rehabilitación\n• Escuelas especiales\n• Consultorios privados\n• Hogares de adultos mayores\n\n💡 Tip: Si te gusta ayudar a personas y eres creativo, ¡es una excelente carrera!';
+    }
+    
+    if (msg.includes('acuicultura')) {
+      return '🐟 ACUICULTURA\n\n📋 ¿Qué hace?\nSe dedica al cultivo y producción de organismos acuáticos (peces, moluscos, algas) para alimentación, ornamentación o conservación.\n\n⏱ Duración: 5 años\n💰 Sueldo: $600.000 - $1.200.000\n\n🎯 Habilidades necesarias:\n• Amor por la naturaleza\n• Conocimiento científico\n• Trabajo al aire libre\n• Paciencia\n\n🏢 Dónde trabajar:\n• Empresas salmoneras\n• Centros de cultivo de moluscos\n• Laboratorios de algas\n• Investigación marina\n• Empresas de alimentos del mar\n\n💡 Tip: Chile es uno de los mayores productores de salmón del mundo. ¡Hay mucho trabajo en el sur!';
+    }
+
+    if (msg.includes('carrera') || msg.includes('que estudiar') || msg.includes('qué estudiar')) {
+      return '🎓 ¿Cómo elegir tu carrera?\n\n1️⃣ IDENTIFICA tus intereses:\n• ¿Qué te apasiona? ¿Qué harías gratis?\n• ¿Qué asignaturas se te facilitan?\n\n2️⃣ INVESTIGA:\n• Revisa el plan de estudios\n• Conversa con profesionales del área\n• Haz un test vocacional\n\n3️⃣ CONSIDERA:\n• Duración de la carrera\n• Salida laboral\n• Sueldo promedio\n• Modalidad (diurno, vespertino, online)\n\n4️⃣ PRUEBA:\n• Visita universidades\n• Asiste a jornadas de puertas abiertas\n• Habla con estudiantes actuales\n\n💡 Tip: No hay carrera "mejor" o "peor". La mejor es la que se alinea con tus intereses y habilidades.\n\n📌 Revisa la sección "Carreras" de esta app para ver todas las opciones.';
+    }
     
     if (msg.includes('ecuacion') || msg.includes('despejar') || msg.includes('incognita')) {
       return '📐 Para resolver una ecuación de primer grado:\n\n1. Agrupa las x de un lado y los números del otro\n2. Lo que suma pasa restando, lo que multiplica pasa dividiendo\n3. Simplifica\n\nEjemplo: 3x + 5 = 20\n→ 3x = 20 - 5\n→ 3x = 15\n→ x = 5\n\n¿Quieres que te explique con otro ejemplo?';
@@ -58,7 +71,7 @@ function AIChat() {
     }
     
     if (msg.includes('hola') || msg.includes('buenas') || msg.includes('hey')) {
-      return '¡Hola! 😊 ¿En qué puedo ayudarte hoy? Puedo explicarte temas de:\n\n📐 Matemáticas\n📝 Lenguaje\n🔬 Ciencias\n🇨🇱 Historia\n\nO puedo ayudarte con:\n💰 Becas y financiamiento\n🎓 Universidades y carreras\n👨‍💼 Información para adultos\n\n¡Pregúntame lo que necesites!';
+      return '¡Hola! 😊 ¿En qué puedo ayudarte hoy? Puedo explicarte temas de:\n\n📐 Matemáticas\n📝 Lenguaje\n🔬 Ciencias\n🇨🇱 Historia\n💰 Becas y financiamiento\n🎓 Universidades y carreras\n👨‍💼 Información para adultos\n\n¡Pregúntame lo que necesites!';
     }
     
     if (msg.includes('gracias') || msg.includes('thanks')) {
@@ -76,8 +89,16 @@ function AIChat() {
     if (msg.includes('examen libre') || msg.includes('epja') || msg.includes('terminar media')) {
       return '📚 Terminar la Enseñanza Media:\n\n📌 EXAMEN LIBRE:\n• Para mayores de 18 años\n• Se rinde una vez al año\n• Exámenes de todas las asignaturas de 1° y 2° medio\n• Se inscribe en el Ministerio de Educación\n\n📌 EPJA (Educación para Jóvenes y Adultos):\n• Para mayores de 15 años\n• Clases presenciales, generalmente vespertinas\n• Duración: 2 años (equivalente a 1° y 2° medio)\n• Gratuitas en establecimientos municipales\n\n💡 Ambas opciones te dan licencia de enseñanza media para rendir la PAES.';
     }
+
+    if (msg.includes('medicina') || msg.includes('doctor') || msg.includes('médico')) {
+      return '⚕️ MEDICINA\n\n📋 ¿Qué hace?\nDiagnostica, trata y previene enfermedades. Puede especializarse en cardiología, pediatría, cirugía, etc.\n\n⏱ Duración: 7 años + 3-4 años de especialidad\n💰 Sueldo: $1.000.000 - $3.000.000+\n\n🎯 Habilidades necesarias:\n• Vocación de servicio\n• Resistencia física y mental\n• Capacidad de análisis\n• Empatía\n• Estudio constante\n\n🏥 Dónde trabajar:\n• Hospitales y clínicas\n• Consultorios privados\n• Investigación\n• Docencia universitaria\n\n💡 Tip: Es una carrera exigente pero muy gratificante. Requiere mucha dedicación.';
+    }
+
+    if (msg.includes('informatica') || msg.includes('programacion') || msg.includes('programación') || msg.includes('software')) {
+      return '💻 INGENIERÍA EN INFORMÁTICA / COMPUTACIÓN\n\n📋 ¿Qué hace?\nDesarrolla software, sistemas, aplicaciones y soluciones tecnológicas para empresas y usuarios.\n\n⏱ Duración: 5 años\n💰 Sueldo: $800.000 - $2.500.000\n\n🎯 Habilidades necesarias:\n• Lógica y pensamiento abstracto\n• Programación\n• Resolución de problemas\n• Inglés técnico\n\n💼 Dónde trabajar:\n• Empresas de tecnología\n• Bancos y finanzas\n• Startups\n• Freelance / remoto\n• Grandes empresas (Google, Microsoft, etc.)\n\n💡 Tip: Es una de las carreras con mayor demanda laboral y mejores sueldos. ¡Se puede trabajar remoto desde cualquier parte!';
+    }
     
-    return '🤔 Puedo ayudarte con muchos temas. Prueba preguntándome sobre:\n\n📐 Matemáticas (ecuaciones, porcentajes, geometría)\n📝 Lenguaje (figuras literarias, comprensión lectora)\n🔬 Ciencias (célula, cuerpo humano, medio ambiente)\n🇨🇱 Historia (independencia, siglo XX, derechos humanos)\n💰 Becas y financiamiento\n🎓 Universidades y carreras\n👨‍💼 Información para adultos\n📚 Cómo terminar la enseñanza media\n\n¡Pregúntame lo que necesites!';
+    return '🤔 Puedo ayudarte con muchos temas. Prueba preguntándome sobre:\n\n📐 Matemáticas (ecuaciones, porcentajes, geometría)\n📝 Lenguaje (figuras literarias, comprensión lectora)\n🔬 Ciencias (célula, cuerpo humano, medio ambiente)\n🇨🇱 Historia (independencia, siglo XX, derechos humanos)\n💰 Becas y financiamiento\n🎓 Universidades y carreras\n🧩 Terapeuta Ocupacional\n🐟 Acuicultura\n⚕️ Medicina\n💻 Informática\n👨‍💼 Información para adultos\n📚 Cómo terminar la enseñanza media\n\n¡Pregúntame lo que necesites!';
   };
 
   const handleSend = () => {
@@ -100,7 +121,7 @@ function AIChat() {
         <h3 className="text-xl font-bold flex items-center gap-2">
           🤖 Ayudante IA
         </h3>
-        <p className="text-indigo-100 text-sm">Pregúntame sobre materias, becas, universidades o cómo prepararte</p>
+        <p className="text-indigo-100 text-sm">Pregúntame sobre materias, carreras, becas o cómo prepararte</p>
       </div>
       
       <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
@@ -136,7 +157,7 @@ function AIChat() {
           </button>
         </div>
         <div className="flex gap-2 mt-2 flex-wrap">
-          {['Becas', 'Adultos', 'Consejos PAES', 'Ecuaciones', 'Universidades'].map(suggestion => (
+          {['Terapeuta Ocupacional', 'Acuicultura', 'Becas', 'Medicina', 'Informática', 'Consejos PAES'].map(suggestion => (
             <button
               key={suggestion}
               onClick={() => { setInput(suggestion); }}
@@ -307,7 +328,6 @@ function QuizSection() {
 
   return (
     <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-      {/* Header */}
       <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 text-white">
         <div className="flex justify-between items-center">
           <div>
@@ -326,7 +346,6 @@ function QuizSection() {
         </div>
       </div>
 
-      {/* Question */}
       <div className="p-6">
         <h4 className="text-lg font-semibold text-gray-800 mb-6">{question.question}</h4>
         <div className="space-y-3">
@@ -474,6 +493,160 @@ function GuidesSection() {
   );
 }
 
+// ==================== CAREERS SECTION ====================
+function CareersSection() {
+  const [selectedCareer, setSelectedCareer] = useState<Career | null>(null);
+  const [filter, setFilter] = useState<string>('Todas');
+  const [search, setSearch] = useState('');
+
+  const filteredCareers = careers.filter(career => {
+    const matchesArea = filter === 'Todas' || career.area === filter;
+    const matchesSearch = career.name.toLowerCase().includes(search.toLowerCase()) ||
+                          career.description.toLowerCase().includes(search.toLowerCase());
+    return matchesArea && matchesSearch;
+  });
+
+  if (selectedCareer) {
+    return (
+      <div>
+        <button
+          onClick={() => setSelectedCareer(null)}
+          className="mb-4 text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1"
+        >
+          ← Volver a carreras
+        </button>
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 text-white">
+            <div className="flex items-center gap-4">
+              <span className="text-5xl">{selectedCareer.icon}</span>
+              <div>
+                <h2 className="text-2xl font-bold">{selectedCareer.name}</h2>
+                <p className="text-indigo-100 mt-1">{selectedCareer.area}</p>
+              </div>
+            </div>
+          </div>
+          <div className="p-6 space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-blue-50 rounded-xl p-4">
+                <p className="text-sm text-blue-600 font-medium">⏱ Duración</p>
+                <p className="text-lg font-bold text-blue-800">{selectedCareer.duration}</p>
+              </div>
+              <div className="bg-green-50 rounded-xl p-4">
+                <p className="text-sm text-green-600 font-medium">💰 Sueldo estimado</p>
+                <p className="text-lg font-bold text-green-800">{selectedCareer.salary}</p>
+              </div>
+              <div className="bg-purple-50 rounded-xl p-4">
+                <p className="text-sm text-purple-600 font-medium">🏷 Área</p>
+                <p className="text-lg font-bold text-purple-800">{selectedCareer.area}</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-gray-800 mb-2">📋 ¿Qué hace?</h3>
+              <p className="text-gray-700 leading-relaxed">{selectedCareer.description}</p>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-gray-800 mb-3">🎯 Habilidades necesarias</h3>
+              <div className="flex flex-wrap gap-2">
+                {selectedCareer.skills.map((skill, idx) => (
+                  <span key={idx} className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+              <h4 className="font-bold text-amber-800 mb-2">💡 ¿Es para ti?</h4>
+              <p className="text-amber-700 text-sm">
+                Si te identificas con las habilidades mencionadas y te apasiona el área, ¡podría ser la carrera ideal para ti! 
+                Te recomendamos investigar universidades que la impartan y conversar con profesionales del área.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <h2 className="text-2xl font-bold text-gray-800 mb-2">🎓 Carreras del Mundo</h2>
+      <p className="text-gray-600 mb-6">Explora todas las opciones de carreras profesionales. Encuentra la ideal para ti.</p>
+
+      {/* Search */}
+      <div className="mb-4">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="🔍 Buscar carrera..."
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm"
+        />
+      </div>
+
+      {/* Filters */}
+      <div className="flex gap-2 mb-6 flex-wrap">
+        {careerAreas.map(area => (
+          <button
+            key={area}
+            onClick={() => setFilter(area)}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+              filter === area
+                ? 'bg-indigo-600 text-white shadow-md'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            {area}
+          </button>
+        ))}
+      </div>
+
+      {/* Results count */}
+      <p className="text-sm text-gray-500 mb-4">
+        Mostrando {filteredCareers.length} de {careers.length} carreras
+      </p>
+
+      {/* Career Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredCareers.map(career => (
+          <button
+            key={career.id}
+            onClick={() => setSelectedCareer(career)}
+            className="p-4 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all hover:scale-[1.02] border border-gray-100 text-left group"
+          >
+            <div className="flex items-start gap-3">
+              <span className="text-3xl">{career.icon}</span>
+              <div className="flex-1 min-w-0">
+                <span className="text-xs font-medium text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">
+                  {career.area}
+                </span>
+                <h3 className="text-base font-bold text-gray-800 mt-2 group-hover:text-indigo-600 transition-colors truncate">
+                  {career.name}
+                </h3>
+                <p className="text-gray-500 text-xs mt-1 line-clamp-2">{career.description}</p>
+                <div className="flex gap-2 mt-2 text-xs text-gray-400">
+                  <span>⏱ {career.duration}</span>
+                  <span>•</span>
+                  <span>💰 {career.salary.split(' - ')[0]}</span>
+                </div>
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+
+      {filteredCareers.length === 0 && (
+        <div className="text-center py-12">
+          <p className="text-4xl mb-3">🔍</p>
+          <p className="text-gray-500">No se encontraron carreras con ese criterio.</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ==================== INFO SECTION ====================
 function InfoSection() {
   return (
@@ -481,7 +654,6 @@ function InfoSection() {
       <h2 className="text-2xl font-bold text-gray-800 mb-2">ℹ️ Información PAES</h2>
       <p className="text-gray-600 mb-6">Todo lo que necesitas saber sobre la prueba y el proceso de admisión.</p>
 
-      {/* ¿Qué es la PAES? */}
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
         <h3 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
           📋 ¿Qué es la PAES?
@@ -508,7 +680,6 @@ function InfoSection() {
         </div>
       </div>
 
-      {/* ¿Quién puede rendir? */}
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
         <h3 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
           👥 ¿Quién puede rendir la PAES?
@@ -532,7 +703,6 @@ function InfoSection() {
         </div>
       </div>
 
-      {/* Becas */}
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
         <h3 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
           💰 Becas y Financiamiento
@@ -569,7 +739,6 @@ function InfoSection() {
         </div>
       </div>
 
-      {/* Modalidades de estudio */}
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
         <h3 className="text-xl font-bold text-gray-800 mb-3 flex items-center gap-2">
           🏫 Modalidades de Estudio
@@ -595,7 +764,6 @@ function InfoSection() {
         </div>
       </div>
 
-      {/* Fechas importantes */}
       <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-6 text-white">
         <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
           📅 Fechas Clave (Referencia General)
@@ -626,39 +794,39 @@ function InfoSection() {
 
 // ==================== MAIN APP ====================
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'quiz' | 'guides' | 'ai' | 'info'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'quiz' | 'guides' | 'ai' | 'info' | 'careers'>('home');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <button onClick={() => setCurrentPage('home')} className="flex items-center gap-2">
               <span className="text-2xl">🎓</span>
-              <span className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                 PAES Prep
               </span>
             </button>
-            <div className="flex gap-1">
+            <div className="flex gap-0.5 md:gap-1">
               {[
                 { id: 'home' as const, label: 'Inicio', icon: '🏠' },
                 { id: 'quiz' as const, label: 'Pruebas', icon: '📝' },
                 { id: 'guides' as const, label: 'Guías', icon: '📚' },
-                { id: 'info' as const, label: 'Info PAES', icon: 'ℹ️' },
+                { id: 'careers' as const, label: 'Carreras', icon: '🎓' },
+                { id: 'info' as const, label: 'Info', icon: 'ℹ️' },
                 { id: 'ai' as const, label: 'IA', icon: '🤖' },
               ].map(item => (
                 <button
                   key={item.id}
                   onClick={() => setCurrentPage(item.id)}
-                  className={`px-2 md:px-3 py-2 rounded-lg text-xs md:text-sm font-medium transition-all flex items-center gap-1 ${
+                  className={`px-1.5 md:px-3 py-2 rounded-lg text-xs md:text-sm font-medium transition-all flex items-center gap-0.5 md:gap-1 ${
                     currentPage === item.id
                       ? 'bg-indigo-100 text-indigo-700'
                       : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
-                  <span>{item.icon}</span>
-                  <span className="hidden md:inline">{item.label}</span>
+                  <span className="text-base md:text-lg">{item.icon}</span>
+                  <span className="hidden lg:inline">{item.label}</span>
                 </button>
               ))}
             </div>
@@ -666,11 +834,9 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
         {currentPage === 'home' && (
           <div>
-            {/* Hero Section */}
             <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 rounded-3xl p-8 md:p-12 text-white mb-8 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
@@ -693,10 +859,10 @@ export default function App() {
                     📝 Hacer una Prueba
                   </button>
                   <button
-                    onClick={() => setCurrentPage('info')}
+                    onClick={() => setCurrentPage('careers')}
                     className="px-6 py-3 bg-white/20 text-white rounded-xl font-bold hover:bg-white/30 transition-colors backdrop-blur-sm border border-white/30"
                   >
-                    ℹ️ Info PAES y Becas
+                    🎓 Ver Carreras
                   </button>
                   <button
                     onClick={() => setCurrentPage('ai')}
@@ -708,43 +874,75 @@ export default function App() {
               </div>
             </div>
 
-            {/* Features */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
               <button
                 onClick={() => setCurrentPage('quiz')}
-                className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
+                className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-3">📝</div>
-                <h3 className="text-base font-bold text-gray-800 mb-1">Pruebas con Tiempo</h3>
-                <p className="text-gray-500 text-xs">Simulacros cronometrados con retroalimentación instantánea.</p>
+                <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-xl mb-2">📝</div>
+                <h3 className="text-sm font-bold text-gray-800">Pruebas</h3>
+                <p className="text-gray-500 text-xs">Simulacros</p>
               </button>
               <button
                 onClick={() => setCurrentPage('guides')}
-                className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
+                className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
               >
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl mb-3">📚</div>
-                <h3 className="text-base font-bold text-gray-800 mb-1">Guías de Estudio</h3>
-                <p className="text-gray-500 text-xs">Material por asignatura con explicaciones y tips.</p>
+                <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center text-xl mb-2">📚</div>
+                <h3 className="text-sm font-bold text-gray-800">Guías</h3>
+                <p className="text-gray-500 text-xs">Estudio</p>
+              </button>
+              <button
+                onClick={() => setCurrentPage('careers')}
+                className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
+              >
+                <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center text-xl mb-2">🎓</div>
+                <h3 className="text-sm font-bold text-gray-800">Carreras</h3>
+                <p className="text-gray-500 text-xs">Explora</p>
               </button>
               <button
                 onClick={() => setCurrentPage('info')}
-                className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
+                className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
               >
-                <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-2xl mb-3">💰</div>
-                <h3 className="text-base font-bold text-gray-800 mb-1">Becas y Info</h3>
-                <p className="text-gray-500 text-xs">Todo sobre becas, universidades y el proceso.</p>
+                <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-xl mb-2">💰</div>
+                <h3 className="text-sm font-bold text-gray-800">Becas</h3>
+                <p className="text-gray-500 text-xs">Info PAES</p>
               </button>
               <button
                 onClick={() => setCurrentPage('ai')}
-                className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100"
+                className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-left border border-gray-100 col-span-2 md:col-span-1"
               >
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl mb-3">🤖</div>
-                <h3 className="text-base font-bold text-gray-800 mb-1">Ayudante IA</h3>
-                <p className="text-gray-500 text-xs">Resuelve tus dudas al instante.</p>
+                <div className="w-10 h-10 bg-pink-100 rounded-xl flex items-center justify-center text-xl mb-2">🤖</div>
+                <h3 className="text-sm font-bold text-gray-800">IA</h3>
+                <p className="text-gray-500 text-xs">Ayudante</p>
               </button>
             </div>
 
-            {/* Para quién es */}
+            {/* Featured Careers */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 mb-8">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold text-gray-800">🌟 Carreras Destacadas</h3>
+                <button
+                  onClick={() => setCurrentPage('careers')}
+                  className="text-indigo-600 text-sm font-medium hover:text-indigo-800"
+                >
+                  Ver todas →
+                </button>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {careers.slice(0, 4).map(career => (
+                  <button
+                    key={career.id}
+                    onClick={() => { setCurrentPage('careers'); }}
+                    className="p-3 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl text-left hover:shadow-md transition-all"
+                  >
+                    <span className="text-2xl">{career.icon}</span>
+                    <p className="text-sm font-bold text-gray-800 mt-1">{career.name}</p>
+                    <p className="text-xs text-gray-500">{career.duration}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 mb-8">
               <h3 className="text-xl font-bold text-gray-800 mb-4">🎯 ¿Para quién es esta plataforma?</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -756,7 +954,7 @@ export default function App() {
                 <div className="text-center">
                   <div className="text-4xl mb-3">👨‍💼</div>
                   <h4 className="font-bold text-gray-800 mb-2">Adultos</h4>
-                  <p className="text-sm text-gray-600">Si tienes 18 años o más, trabajas y quieres estudiar una carrera universitaria.</p>
+                  <p className="text-sm text-gray-600">Si tienes 16 años o más, trabajas y quieres estudiar una carrera universitaria.</p>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl mb-3">🔄</div>
@@ -766,7 +964,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Stats & Motivation */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
               <h3 className="text-xl font-bold text-gray-800 mb-4">📊 ¿Por qué prepararse ahora?</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -802,7 +999,7 @@ export default function App() {
                   <div className="mt-4 flex flex-wrap gap-2">
                     <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-medium">4 asignaturas</span>
                     <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">60+ preguntas</span>
-                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">12 guías</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">60+ carreras</span>
                     <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-medium">Sin límite de edad</span>
                   </div>
                 </div>
@@ -815,9 +1012,9 @@ export default function App() {
         {currentPage === 'guides' && <GuidesSection />}
         {currentPage === 'ai' && <AIChat />}
         {currentPage === 'info' && <InfoSection />}
+        {currentPage === 'careers' && <CareersSection />}
       </main>
 
-      {/* Footer */}
       <footer className="bg-white border-t border-gray-100 mt-12 py-6">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-gray-500 text-sm">
