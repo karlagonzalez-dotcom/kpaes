@@ -23,11 +23,11 @@ function AIChat() {
     const msg = userMessage.toLowerCase();
     
     if (msg.includes('terapeuta ocupacional') || msg.includes('ocupacional')) {
-      return '🧩 TERAPISTA OCUPACIONAL\n\n📋 ¿Qué hace?\nAyuda a personas con discapacidades físicas, mentales o del desarrollo a recuperar habilidades para realizar actividades diarias (vestirse, trabajar, cocinar).\n\n⏱ Duración: 5 años\n💰 Sueldo: $600.000 - $1.200.000\n\n🎯 Habilidades necesarias:\n• Empatía y paciencia\n• Creatividad\n• Observación\n• Trabajo en equipo\n\n🏥 Dónde trabajar:\n• Hospitales y clínicas\n• Centros de rehabilitación\n• Escuelas especiales\n• Consultorios privados\n• Hogares de adultos mayores\n\n💡 Tip: Si te gusta ayudar a personas y eres creativo, ¡es una excelente carrera!';
+      return '🧩 TERAPIA OCUPACIONAL\n\n📋 ¿Qué hace?\nAyuda a personas con discapacidades físicas, mentales o del desarrollo a recuperar habilidades para realizar actividades diarias (vestirse, trabajar, cocinar).\n\n⏱ Duración: 5 años\n💰 Sueldo promedio (5° año egreso): $1.242.825\n📊 Empleabilidad: 75,3%\n\n🎯 Habilidades necesarias:\n• Empatía y paciencia\n• Creatividad\n• Observación\n• Trabajo en equipo\n\n🏥 Dónde trabajar:\n• Hospitales y clínicas\n• Centros de rehabilitación\n• Escuelas especiales\n• Consultorios privados\n• Hogares de adultos mayores\n\n💡 Tip: Si te gusta ayudar a personas y eres creativo, ¡es una excelente carrera! Fuente: mifuturo.cl';
     }
     
     if (msg.includes('acuicultura')) {
-      return '🐟 ACUICULTURA\n\n📋 ¿Qué hace?\nSe dedica al cultivo y producción de organismos acuáticos (peces, moluscos, algas) para alimentación, ornamentación o conservación.\n\n⏱ Duración: 5 años\n💰 Sueldo: $600.000 - $1.200.000\n\n🎯 Habilidades necesarias:\n• Amor por la naturaleza\n• Conocimiento científico\n• Trabajo al aire libre\n• Paciencia\n\n🏢 Dónde trabajar:\n• Empresas salmoneras\n• Centros de cultivo de moluscos\n• Laboratorios de algas\n• Investigación marina\n• Empresas de alimentos del mar\n\n💡 Tip: Chile es uno de los mayores productores de salmón del mundo. ¡Hay mucho trabajo en el sur!';
+      return '🐟 ACUICULTURA\n\n📋 ¿Qué hace?\nSe dedica al cultivo y producción de organismos acuáticos (peces, moluscos, algas) para alimentación, ornamentación o conservación.\n\n⏱ Duración: 2-3 años (técnico) o 5 años (profesional en Biología Marina)\n💰 Sueldo técnico: $800.000 - $1.100.000\n💰 Biología Marina: $1.264.297 (5° año egreso)\n📊 Empleabilidad Biología Marina: 64,5%\n\n🎯 Habilidades necesarias:\n• Amor por la naturaleza\n• Conocimiento científico\n• Trabajo al aire libre\n• Paciencia\n\n🏢 Dónde trabajar:\n• Empresas salmoneras\n• Centros de cultivo de moluscos\n• Laboratorios de algas\n• Investigación marina\n• Empresas de alimentos del mar\n\n💡 Tip: Chile es uno de los mayores productores de salmón del mundo. ¡Hay mucho trabajo en el sur!';
     }
 
     if (msg.includes('carrera') || msg.includes('que estudiar') || msg.includes('qué estudiar')) {
@@ -91,11 +91,11 @@ function AIChat() {
     }
 
     if (msg.includes('medicina') || msg.includes('doctor') || msg.includes('médico')) {
-      return '⚕️ MEDICINA\n\n📋 ¿Qué hace?\nDiagnostica, trata y previene enfermedades. Puede especializarse en cardiología, pediatría, cirugía, etc.\n\n⏱ Duración: 7 años + 3-4 años de especialidad\n💰 Sueldo: $1.000.000 - $3.000.000+\n\n🎯 Habilidades necesarias:\n• Vocación de servicio\n• Resistencia física y mental\n• Capacidad de análisis\n• Empatía\n• Estudio constante\n\n🏥 Dónde trabajar:\n• Hospitales y clínicas\n• Consultorios privados\n• Investigación\n• Docencia universitaria\n\n💡 Tip: Es una carrera exigente pero muy gratificante. Requiere mucha dedicación.';
+      return '⚕️ MEDICINA\n\n📋 ¿Qué hace?\nDiagnostica, trata y previene enfermedades. Puede especializarse en cardiología, pediatría, cirugía, etc.\n\n⏱ Duración: 7 años + 3-4 años de especialidad\n💰 Sueldo promedio (5° año egreso): $4.021.010\n📊 Empleabilidad: 89,0%\n\n🎯 Habilidades necesarias:\n• Vocación de servicio\n• Resistencia física y mental\n• Capacidad de análisis\n• Empatía\n• Estudio constante\n\n🏥 Dónde trabajar:\n• Hospitales y clínicas\n• Consultorios privados\n• Investigación\n• Docencia universitaria\n\n💡 Tip: Es la carrera mejor pagada de Chile según mifuturo.cl. Exigente pero muy gratificante.';
     }
 
     if (msg.includes('informatica') || msg.includes('programacion') || msg.includes('programación') || msg.includes('software')) {
-      return '💻 INGENIERÍA EN INFORMÁTICA / COMPUTACIÓN\n\n📋 ¿Qué hace?\nDesarrolla software, sistemas, aplicaciones y soluciones tecnológicas para empresas y usuarios.\n\n⏱ Duración: 5 años\n💰 Sueldo: $800.000 - $2.500.000\n\n🎯 Habilidades necesarias:\n• Lógica y pensamiento abstracto\n• Programación\n• Resolución de problemas\n• Inglés técnico\n\n💼 Dónde trabajar:\n• Empresas de tecnología\n• Bancos y finanzas\n• Startups\n• Freelance / remoto\n• Grandes empresas (Google, Microsoft, etc.)\n\n💡 Tip: Es una de las carreras con mayor demanda laboral y mejores sueldos. ¡Se puede trabajar remoto desde cualquier parte!';
+      return '💻 INGENIERÍA EN COMPUTACIÓN E INFORMÁTICA\n\n📋 ¿Qué hace?\nDesarrolla software, sistemas, aplicaciones y soluciones tecnológicas para empresas y usuarios.\n\n⏱ Duración: 5 años (Ing.) o 6 años (Ing. Civil)\n💰 Sueldo Ing. en Computación: $2.079.117\n💰 Sueldo Ing. Civil en Computación: $2.572.967\n📊 Empleabilidad: 89-93,5%\n\n🎯 Habilidades necesarias:\n• Lógica y pensamiento abstracto\n• Programación\n• Resolución de problemas\n• Inglés técnico\n\n💼 Dónde trabajar:\n• Empresas de tecnología\n• Bancos y finanzas\n• Startups\n• Freelance / remoto\n• Grandes empresas (Google, Microsoft, etc.)\n\n💡 Tip: Es una de las carreras con mayor demanda laboral. ¡Se puede trabajar remoto desde cualquier parte!';
     }
     
     return '🤔 Puedo ayudarte con muchos temas. Prueba preguntándome sobre:\n\n📐 Matemáticas (ecuaciones, porcentajes, geometría)\n📝 Lenguaje (figuras literarias, comprensión lectora)\n🔬 Ciencias (célula, cuerpo humano, medio ambiente)\n🇨🇱 Historia (independencia, siglo XX, derechos humanos)\n💰 Becas y financiamiento\n🎓 Universidades y carreras\n🧩 Terapeuta Ocupacional\n🐟 Acuicultura\n⚕️ Medicina\n💻 Informática\n👨‍💼 Información para adultos\n📚 Cómo terminar la enseñanza media\n\n¡Pregúntame lo que necesites!';
@@ -532,12 +532,12 @@ function CareersSection() {
                 <p className="text-lg font-bold text-blue-800">{selectedCareer.duration}</p>
               </div>
               <div className="bg-green-50 rounded-xl p-4">
-                <p className="text-sm text-green-600 font-medium">💰 Sueldo estimado</p>
+                <p className="text-sm text-green-600 font-medium">💰 Sueldo promedio (5° año egreso)</p>
                 <p className="text-lg font-bold text-green-800">{selectedCareer.salary}</p>
               </div>
               <div className="bg-purple-50 rounded-xl p-4">
-                <p className="text-sm text-purple-600 font-medium">🏷 Área</p>
-                <p className="text-lg font-bold text-purple-800">{selectedCareer.area}</p>
+                <p className="text-sm text-purple-600 font-medium">📊 Empleabilidad (2° año)</p>
+                <p className="text-lg font-bold text-purple-800">{selectedCareer.employability}</p>
               </div>
             </div>
 
@@ -562,6 +562,13 @@ function CareersSection() {
               <p className="text-amber-700 text-sm">
                 Si te identificas con las habilidades mencionadas y te apasiona el área, ¡podría ser la carrera ideal para ti! 
                 Te recomendamos investigar universidades que la impartan y conversar con profesionales del área.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+              <p className="text-xs text-gray-500">
+                📌 <strong>Fuente:</strong> Datos de sueldo e empleabilidad según <a href="https://www.mifuturo.cl" target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline">mifuturo.cl</a> (MINEDUC). 
+                Sueldo = ingreso bruto mensual al 5° año de egreso. Empleabilidad = % de titulados con empleo al 2° año de titulación (Septiembre 2024).
               </p>
             </div>
           </div>
@@ -626,10 +633,13 @@ function CareersSection() {
                   {career.name}
                 </h3>
                 <p className="text-gray-500 text-xs mt-1 line-clamp-2">{career.description}</p>
-                <div className="flex gap-2 mt-2 text-xs text-gray-400">
+                <div className="flex gap-2 mt-2 text-xs text-gray-400 flex-wrap">
                   <span>⏱ {career.duration}</span>
                   <span>•</span>
-                  <span>💰 {career.salary.split(' - ')[0]}</span>
+                  <span className="text-green-600 font-medium">💰 {career.salary.split(' - ')[0]}</span>
+                </div>
+                <div className="flex gap-2 mt-1 text-xs text-gray-400">
+                  <span className="text-purple-600 font-medium">📊 Empleabilidad: {career.employability}</span>
                 </div>
               </div>
             </div>
@@ -787,6 +797,31 @@ function InfoSection() {
           </div>
         </div>
         <p className="text-xs text-indigo-200 mt-4">* Las fechas exactas varían cada año. Revisa demre.cl para información actualizada.</p>
+      </div>
+
+      <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-6 text-white">
+        <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+          🔗 Recursos Oficiales
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="https://www.mifuturo.cl" target="_blank" rel="noopener noreferrer" className="bg-white/10 rounded-xl p-4 backdrop-blur-sm hover:bg-white/20 transition-colors">
+            <p className="font-bold">📊 MiFuturo.cl</p>
+            <p className="text-sm text-emerald-100">Sueldos, empleabilidad y estadísticas de todas las carreras</p>
+          </a>
+          <a href="https://www.demre.cl" target="_blank" rel="noopener noreferrer" className="bg-white/10 rounded-xl p-4 backdrop-blur-sm hover:bg-white/20 transition-colors">
+            <p className="font-bold">📝 DEMRE</p>
+            <p className="text-sm text-emerald-100">Inscripción y rendición de la PAES</p>
+          </a>
+          <a href="https://www.fuas.cl" target="_blank" rel="noopener noreferrer" className="bg-white/10 rounded-xl p-4 backdrop-blur-sm hover:bg-white/20 transition-colors">
+            <p className="font-bold">💰 FUAS</p>
+            <p className="text-sm text-emerald-100">Postulación a beneficios estudiantiles del Estado</p>
+          </a>
+          <a href="https://mifuturo.cl/buscador-de-carreras" target="_blank" rel="noopener noreferrer" className="bg-white/10 rounded-xl p-4 backdrop-blur-sm hover:bg-white/20 transition-colors">
+            <p className="font-bold">🎓 Buscador de Carreras</p>
+            <p className="text-sm text-emerald-100">Oferta académica 2026 por región y área</p>
+          </a>
+        </div>
+        <p className="text-xs text-emerald-200 mt-4">* Los datos de sueldos e empleabilidad de esta app provienen de mifuturo.cl (MINEDUC) - Septiembre 2024.</p>
       </div>
     </div>
   );
